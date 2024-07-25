@@ -1,4 +1,4 @@
-# DeepOmix2 
+# DeepOmix2.0 Multi-modal data integration for pan-cancer clinical insights with explainable deep learning and large-scale pre-trained model 
 
 <img src="graphical pipeline.png" width="625px" align="middle" />
 
