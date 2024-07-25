@@ -22,11 +22,47 @@ First, we need to install the following packages:
 * NVIDIA GPU (Tested on Nvidia A00 x 8)
 * Python (3.7.1), h5py (2.10.0), matplotlib (3.1.1), numpy (1.18.1), opencv-python (4.1.1), openslide-python (1.1.1), openslide (3.4.1), pandas (1.0.3), pillow (7.0.0), PyTorch (1.5.1), scikit-learn (0.22.1), scipy (1.3.1), tensorflow (1.14.0), tensorboardx (1.9), torchvision (0.6).
 
+Next, use the environment configuration file to create a conda environment:
+```shell
+conda env create -f env.yml
+```
+
+Activate the environment:
+```shell
+conda activate deepOmix_latest
+```
+install the package in the environment by running the following command:
+```shell
+pip install git+https://github.com/zhaolianhe/DeepOmix2.git
+```
+
+When done running experiments, to deactivate the environment:
+```shell
+conda deactivate deepOmix_latest
+```
+Please report any issues in the public forum.
+
 ### Examples
 
 You may find a complete example of how to use DeepOmix in the examples:
 
-  * Step1:
+  * Step1: Data Preparation
+
+We chose to encode each pathology image patch with a 1024-dim feature vector using a pretrained MODEL( you can choose with Resnet18,Resnet50,Resnet101,ViT or our own in-house pretrained model). For each pathology image, these features are expected to be saved as matrices of size N x 1024, where N is the number of patches from each whole slide image. The following folder structure is as follows. DATA_ROOT_DIR is the base directory of all datasets.
+```bash
+DATA_ROOT_DIR/
+    └──DATASET_DIR/
+         ├── h5_files
+                ├── slide_1.h5
+                ├── slide_1.pt
+                └── ...
+         └── omics_files
+                ├── patient_1_mutation.txt
+                ├── patient_1_expression.txt
+                └── ...
+```
+
+
   * Step2:
   * Step3:
   
