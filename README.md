@@ -3,11 +3,15 @@
 
 ### Description
 
+### 
 
+*In this work we propose to use omics and pathology images to build a clinical intepratation model for various tasks including survival analyisis， therapy responses，staging prediction and metastatic state. We present DeepOmix with a pretrained pathology model for pan-cancer and a widely application on various cancer types. Our model is tested on an held-out set and an external set of 789 WSIs from three institutions. *
+
+© This code is made available for non-commercial academic purposes. 
 
 #### Acknowledgment
 
-We acknowledge all the authors for DeepOmix2.(under MIT license).
+We acknowledge all authors for DeepOmix2.(under MIT license).
 
 ### Installation  
 
