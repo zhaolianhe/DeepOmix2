@@ -88,9 +88,12 @@ User also has the option of using the visualization script to show one of an int
 
 ``` shell
 CUDA_VISIBLE_DEVICES=0 python visualization.py --task therapy_response  --results_dir results --data_dir DATA_DIR
-  
+```
+ 
 ### Issues
 - Please report all issues on the public forum.
 
 ### References
 [1] Zhao L, Dong Q, Luo C, Wu Y, Bu D, Qi X, Luo Y, Zhao Y. DeepOmix: A scalable and interpretable multi-omics deep learning framework and application in cancer survival analysis. Comput Struct Biotechnol J. 2021 May 1;19:2719-2725. doi: 10.1016/j.csbj.2021.04.067. PMID: 34093987; PMCID: PMC8131983.
+
+[2] Zhao L, *, Zhao Y. DeepOmix2.0: Multi-modal data integration for pan-cancer clinical insights with explainable deep learning and large-scale pre-trained model 
