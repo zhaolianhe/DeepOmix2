@@ -48,11 +48,11 @@ You may find a complete example of how to use DeepOmix in the examples:
 
   * Step1: Data Preparation
 
-We chose to encode each pathology image patch with a 1024-dim feature vector using a pretrained MODEL( you can choose with Resnet18,Resnet50,Resnet101,ViT or our own in-house pretrained model). For each pathology image, these features are expected to be saved as matrices of size N x 1024, where N is the number of patches from each whole slide image. The following folder structure is as follows. DATA_ROOT_DIR is the base directory of all datasets.
+We chose to encode each pathology image patch with a 1024-dim feature vector using a pretrained MODEL( you can choose with Resnet18,Resnet50,Resnet101,ViT or our own in-house pretrained model on baiduyun disk as following(32G)). For each pathology image, these features are expected to be saved as matrices of size N x 1024, where N is the number of patches from each whole slide image. The following folder structure is as follows. DATA_ROOT_DIR is the base directory of all datasets.
 ```bash
 DATA_ROOT_DIR/
     └──DATASET_DIR/
-         ├── h5_files
+         ├── image_files
                 ├── slide_1.h5
                 ├── slide_1.pt
                 └── ...
