@@ -48,9 +48,9 @@ You may find a complete example of how to use DeepOmix in the examples:
 
   * Step1: Data Preparation
 
-We chose to encode each pathology image patch with a 1024-dim feature vector using a pretrained MODEL( you can choose with Resnet18,Resnet50,Resnet101,ViT or our own in-house pre-trained model on baidu disk as follows (https://pan.baidu.com/s/1932eMehc0yrWgbXl2hbRSQ?pwd=pt9s pw: pt9s). For each pathology image, these features are expected to be saved as matrices of size N x 1024, where N is the number of patches from each whole slide image. The following folder structure is as follows. DATA_ROOT_DIR is the base directory of all datasets.
+We chose to encode each pathology image patch with a 1024-dim feature vector using a pretrained MODEL( you can choose with Resnet18,Resnet50,Resnet101,ViT or our own in-house pre-trained model on baidu disk as follows (https://pan.baidu.com/s/1932eMehc0yrWgbXl2hbRSQ?pwd=pt9s pw: pt9s). For each pathology image, these features are expected to be saved as matrices of size N x 1024, where N is the number of patches from each whole slide image. The following folder structure is as follows. DATA_DIR is the base directory of all datasets.
 ```bash
-DATA_ROOT_DIR/
+DATA_DIR/
     └──DATASET_DIR/
          ├── image_files
                 ├── slide_1.h5
@@ -68,7 +68,7 @@ DATA_ROOT_DIR/
 We randomly partitioned our dataset into training, validation, and test splits. There is an example of 80/10/10 splits for the example dataset in the example file to evaluate the model's performance.
 
 ``` shell
-CUDA_VISIBLE_DEVICES=0 python main_train.py  --task survival_prediction  --data_root_dir DATA_ROOT_DIR > log.data
+CUDA_VISIBLE_DEVICES=0 python main_train.py  --task survival_prediction  --data_dir DATA_ROOT_DIR > log.data
 ```
 The GPU to use for training can be specified using CUDA_VISIBLE_DEVICES, in the example command, GPU 0 is used. Other arguments such as drop_out, early_stopping, lr, and max_epochs can be specified with a parameter file.
 
@@ -79,9 +79,15 @@ By default results will be saved to **results/task** corresponding to the task i
 User also has the option of using the evaluation script to test the performances of trained models. Examples corresponding to the models trained above are provided below:
 
 ``` shell
-CUDA_VISIBLE_DEVICES=0 python prediction.py --task survival_analysis  --results_dir results --data_root_dir DATA_ROOT_DIR
+CUDA_VISIBLE_DEVICES=0 python prediction.py --task survival_analysis  --results_dir results --data_dir DATA_DIR
 ```
 
+  * Step4: Visualization
+    
+User also has the option of using the visualization script to show one of an interested patient with some of trained models. Examples corresponding to the therapy response model trained for inference are provided below:
+
+``` shell
+CUDA_VISIBLE_DEVICES=0 python visualization.py --task therapy_response  --results_dir results --data_dir DATA_DIR
   
 ### Issues
 - Please report all issues on the public forum.
