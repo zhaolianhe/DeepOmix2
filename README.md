@@ -1,6 +1,6 @@
 # DeepOmix2 
 
-<img src="graphical pipeline.png" width="825px" align="middle" />
+<img src="graphical pipeline.png" width="625px" align="middle" />
 
 ### Description
 
