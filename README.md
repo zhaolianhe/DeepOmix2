@@ -63,8 +63,25 @@ DATA_ROOT_DIR/
 ```
 
 
-  * Step2:
-  * Step3:
+  * Step2: Training
+    
+We randomly partitioned our dataset into training, validation, and test splits. There is an example of 80/10/10 splits for the example dataset in the example file to evaluate the model's performance.
+
+``` shell
+CUDA_VISIBLE_DEVICES=0 python main_train.py  --task survival_prediction  --data_root_dir DATA_ROOT_DIR > log.data
+```
+The GPU to use for training can be specified using CUDA_VISIBLE_DEVICES, in the example command, GPU 0 is used. Other arguments such as drop_out, early_stopping, lr, and max_epochs can be specified with a parameter file.
+
+By default results will be saved to **results/task** corresponding to the task input argument from the user. 
+
+  * Step3: Prediction
+    
+User also has the option of using the evaluation script to test the performances of trained models. Examples corresponding to the models trained above are provided below:
+
+``` shell
+CUDA_VISIBLE_DEVICES=0 python prediction.py --task survival_analysis  --results_dir results --data_root_dir DATA_ROOT_DIR
+```
+
   
 ### Issues
 - Please report all issues on the public forum.
