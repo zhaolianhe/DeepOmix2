@@ -1,5 +1,6 @@
-# DeepOmix2
+# DeepOmix2 
 
+<img src="graphical pipeline.png" width="825px" align="middle" />
 
 ### Description
 
